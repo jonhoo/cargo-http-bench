@@ -1,0 +1,49 @@
+[package]
+name = "handlebars"
+version = "4.0.0-alpha.0"
+authors = ["Ning Sun <sunng@pm.me>"]
+description = "Handlebars templating implemented in Rust."
+license = "MIT"
+keywords = ["handlebars", "templating", "web"]
+categories = ["template-engine"]
+homepage = "https://github.com/sunng87/handlebars-rust"
+repository = "https://github.com/sunng87/handlebars-rust"
+documentation = "https://docs.rs/crate/handlebars/"
+readme = "README.md"
+edition = "2018"
+
+[lib]
+name = "handlebars"
+path = "src/lib.rs"
+
+[[bin]]
+name = "handlebars-cli"
+path = "src/cli.rs"
+
+[dev-dependencies]
+env_logger = "0.7.1"
+maplit = "1.0.0"
+serde_derive = "1.0.75"
+tempfile = "3.0.0"
+criterion = "0.3"
+
+[target.'cfg(unix)'.dev-dependencies]
+pprof = { version = "0.3.13", features = ["flamegraph", "protobuf"] }
+
+[features]
+dir_source = ["walkdir"]
+script_helper = ["rhai"]
+no_logging = []
+default = []
+
+[dependencies]
+log = { version = "0.4.0" }
+quick-error = "2.0"
+pest = "2.1.0"
+pest_derive = "2.1.0"
+serde = "1.0.0"
+serde_json = "1.0.39"
+walkdir = { version = "2.2.3", optional = true }
+rhai = { version = "0.19.4", optional = true, features = ["sync", "serde"] }
+stub = { path = "../stub" }
+blank = '0.1'

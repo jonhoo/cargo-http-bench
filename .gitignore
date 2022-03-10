@@ -1,0 +1,10 @@
+/*.pdf
+/*.png
+/*.dat
+*/Cargo.lock
+*.bkp
+.dep-meta
+*.log
+target/
+*/.cargo/
+config.json

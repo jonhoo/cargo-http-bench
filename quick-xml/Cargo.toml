@@ -1,0 +1,33 @@
+[package]
+name = "quick-xml"
+version = "0.20.0"
+authors = ["Johann Tuffe <tafia973@gmail.com>"]
+description = "High performance xml reader and writer"
+
+documentation = "https://docs.rs/quick-xml"
+repository = "https://github.com/tafia/quick-xml"
+
+readme = "README.md"
+keywords = ["xml", "reader", "parser", "writer", "html"]
+categories = ["encoding", "parsing", "text-processing"]
+license = "MIT"
+
+[dev-dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde-value = "0.7"
+regex = "1"
+
+[features]
+default = []
+encoding = ["encoding_rs"]
+serialize = ["serde"]
+
+[package.metadata.docs.rs]
+features = ["serialize"]
+
+[dependencies]
+encoding_rs = { version = "0.8.22", optional = true }
+serde = { version = "1.0", optional = true }
+memchr = "2.3.3"
+stub = { path = "../stub" }
+blank = '0.1'
